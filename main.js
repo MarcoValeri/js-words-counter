@@ -1,3 +1,6 @@
+// Import other files
+import newLine from "./word-counter-logic/new-line.js";
+
 // Set DOM variables
 const words_input = document.getElementById('words_input');
 const words_output = document.getElementById('words_output');
