@@ -89,7 +89,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** . */
             // Avoid to add a word count if there is more than one dot
-            if (e.target.value[x] === '.' && e.target.value[x - 1] !== '.') {
+            if (e.target.value[x] === '.' && e.target.value[x - 1] !== '.' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a dot
@@ -109,7 +109,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** ? */
             // Avoid to add a word count if there is more than one ?
-            if (e.target.value[x] === '?' && e.target.value[x - 1] !== '?') {
+            if (e.target.value[x] === '?' && e.target.value[x - 1] !== '?' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a ?
@@ -129,7 +129,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** ; */
             // Avoid to add a word count if there is more than one ;
-            if (e.target.value[x] === ';' && e.target.value[x - 1] !== ';') {
+            if (e.target.value[x] === ';' && e.target.value[x - 1] !== ';' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a ;
@@ -149,7 +149,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** , */
             // Avoid to add a word count if there is more than one ,
-            if (e.target.value[x] === ',' && e.target.value[x - 1] !== ',') {
+            if (e.target.value[x] === ',' && e.target.value[x - 1] !== ',' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a ,
@@ -169,7 +169,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** : */
             // Avoid to add a word count if there is more than one :
-            if (e.target.value[x] === ':' && e.target.value[x - 1] !== ':') {
+            if (e.target.value[x] === ':' && e.target.value[x - 1] !== ':' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a :
@@ -189,7 +189,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** ! */
             // Avoid to add a word count if there is more than one !
-            if (e.target.value[x] === '!' && e.target.value[x - 1] !== '!') {
+            if (e.target.value[x] === '!' && e.target.value[x - 1] !== '!' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a !
@@ -209,7 +209,7 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** - */
             // Avoid to add a word count if there is more than one :
-            if (e.target.value[x] === '-' && e.target.value[x - 1] !== '-') {
+            if (e.target.value[x] === '-' && e.target.value[x - 1] !== '-' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a -
