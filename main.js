@@ -229,7 +229,8 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** ' */
             // Avoid to add a word count if there is more than one '
-            if (e.target.value[x] === '\'' && e.target.value[x - 1] !== '\'') {
+            // as well ass if ' is not the first input
+            if (e.target.value[x] === '\'' && e.target.value[x - 1] !== '\'' && x !== 0) {
                 words_num++;
             }
             // Avoid to add a word count if there is a space after a '
@@ -249,7 +250,8 @@ const words_count = (max_words, dom_input, dom_output) => {
 
             /** " */
             // Avoid to add a word count if there is more than one "
-            if (e.target.value[x] === '"' && e.target.value[x - 1] !== '"') {
+            // as well ass if " is not the first input
+            if (e.target.value[x] === '"' && e.target.value[x - 1] !== '"' && x !== 0) {
                 words_num++;
             }
 
@@ -268,9 +270,11 @@ const words_count = (max_words, dom_input, dom_output) => {
                 remove_num++;
             }
 
+            // Avoid to add a word count if the first input is a special characters
+
         }
 
-        // Determine the number of ther words
+        // // Determine the number of ther words
         words_num = words_num + words.length - remove_num;
 
         // Avoid that words_num will be less than zero
