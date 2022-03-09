@@ -273,16 +273,6 @@ const words_count = (max_words, dom_input, dom_output) => {
         // Determine the number of ther words
         words_num = words_num + words.length - remove_num;
 
-        /**
-         * The following statement avoid to add a word count if
-         * there is a special character as first input.
-         * This statement has to stay after the above operation
-         * for avoidin that words_num becomes less than zero
-         */
-        if (e.target.value[0] === '"' || e.target.value[0] === '\'') {
-            words_num--;
-        }
-
         // Avoid that words_num will be less than zero
         if (words_num < 0) {
             console.log(`Words_Num is less than zero`);
