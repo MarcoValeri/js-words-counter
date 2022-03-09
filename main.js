@@ -29,6 +29,9 @@ const words_count = (max_words, dom_input, dom_output) => {
         // Create a variable that gets ReGex special characters
         const regSpecial = new RegExp(/[!-;:,.?]/);
 
+        // Create a variable that gets ReGex numbers
+        const regNum = new RegExp(/[0-9]/);
+
         // Create two variables that determines the number of the words
         let words_num = -1;
         let remove_num = 0;
@@ -270,17 +273,15 @@ const words_count = (max_words, dom_input, dom_output) => {
                 remove_num++;
             }
 
-            // Avoid to add a word count if the first input is a special characters
+            // Avoid to add a word count if there is a fload number
+            if (e.target.value[x] === '.' || e.target.value[x] === ',' && regNum.test(e.target.value[x - 1])) {
+                remove_num++;
+            }
 
         }
 
         // // Determine the number of ther words
         words_num = words_num + words.length - remove_num;
-
-        // Avoid that words_num will be less than zero
-        if (words_num < 0) {
-            console.log(`Words_Num is less than zero`);
-        }
 
         // DOM output
         dom_output.innerHTML = `Word count: ${words_num} (max ${max_words})`;
